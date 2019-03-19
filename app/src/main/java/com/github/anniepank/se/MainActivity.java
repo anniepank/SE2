@@ -22,10 +22,32 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int number = Integer.parseInt(((EditText)findViewById(R.id.number_input)).getText().toString());
+                int number = getValue();
                 new MyThread(number).start();
             }
         });
+
+        findViewById(R.id.calculate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean res = calculate(getValue()) % 2 == 0;
+                ((TextView)findViewById(R.id.answer_text)).setText(res ? "Even" : "Odd" );
+            }
+        });
+    }
+
+    private int calculate(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+
+        return sum;
+    }
+
+    private int getValue() {
+        return Integer.parseInt(((EditText)findViewById(R.id.number_input)).getText().toString());
     }
 
     class MyThread extends Thread {
