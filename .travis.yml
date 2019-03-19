@@ -37,11 +37,11 @@ android:
 script:
   - yes | sdkmanager "platforms;android-28" # accept license
   - chmod +x gradlew                        # make executable 
-  - ./gradlew test jacocoTestReport
-## uncomment test exec if android integration tests are needed
-#  - ./gradlew connectedAndroidTest
+  #  - ./gradlew test jacocoTestReport
+  ## uncomment test exec if android integration tests are needed
+  # - ./gradlew connectedAndroidTest
   - ./gradlew lint
-  - sonar-scanner
+  #  - sonar-scanner
 
 addons:
   sonarcloud:
