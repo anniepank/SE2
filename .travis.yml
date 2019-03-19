@@ -41,11 +41,11 @@ script:
   ## uncomment test exec if android integration tests are needed
   # - ./gradlew connectedAndroidTest
   - ./gradlew lint
-  #  - sonar-scanner
+  - sonar-scanner
 
 addons:
   sonarcloud:
-    organization: "projectname" # der key der organisation auf sonarcloud.io
+    organization: "anniepank-github" # der key der organisation auf sonarcloud.io
     token:
       secure: $SONAR_TOKEN       # $SONAR_TOKEN -> Umgebungsvariable auf travis-ci.org
 
