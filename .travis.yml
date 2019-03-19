@@ -39,7 +39,7 @@ script:
   - chmod +x gradlew                        # make executable 
   - ./gradlew test jacocoTestReport
   ## uncomment test exec if android integration tests are needed
-  - ./gradlew connectedAndroidTest
+  #- ./gradlew connectedAndroidTest
   - ./gradlew lint
   - sonar-scanner
 
